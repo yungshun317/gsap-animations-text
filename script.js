@@ -38,7 +38,34 @@ function updateText(index) {
             },
         });
     } else {
+        gsap.set(".color", {
+            color: "black",
+            textShadow: "0 0 1vh white, 0 0 2vh #00dbf0"
+        });
 
+        elements.forEach(element => {
+            let newContent = "";
+            const content = element.textContent;
+
+            for (let i = 0; i < content.length; i++) {
+                newContent += (i + 1) % 3 === 0
+                    ? '<span class="color">' + content[i] + "</span>"
+                    : content[i];
+            }
+
+            element.innerHTML = newContent;
+        });
+
+        gsap.to(".text", {
+            delay: 3,
+            duration: speed / 2,
+            scale: 6,
+            opacity: 0,
+            ease: "power4.out",
+            onComplete: () => {
+                document.body.style.backgroundImage = "url(" + url + ")"
+            },
+        });
     }
 }
 
