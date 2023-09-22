@@ -18,7 +18,11 @@
     gsap.to(document.querySelector("p"), {
         duration: 10,
         delay: 1,
-        text: "is replaced by new content"
+        text: {
+            value: "is replaced by new content",
+            oldClass: "class1",
+            newClass: "class2"
+        }
     });
 </script>
 </body>
