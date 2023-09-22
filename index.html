@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Text</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+<p style="font-size: 50px; text-align: center">
+    Source Information with Text
+</p>
+<script src="gsap.min.js"></script>
+<script src="TextPlugin.min.js"></script>
+<!-- <script src="script.js"></script> -->
+<script>
+    // gsap.registerPlugin(TextPlugin);
+    gsap.to(document.querySelector("p"), {
+        duration: 10,
+        delay: 1,
+        text: "is replaced by new content"
+    });
+</script>
+</body>
+</html>
